@@ -29,7 +29,7 @@ end
 
 class SearchableModelTwo < ActiveRecord::Base
   has_one :searchable_association, :as => :associatable
-  pg_search_scope :search, { :against => [:search_field_three], :associated_against => { searchable_association: [:search_field_four] }}
+  pg_search_scope :search, { :against => [:search_field_three], :associated_against => { :searchable_association => [:search_field_four] }}
 end
 
 describe PgGlobalSearch do
@@ -41,8 +41,8 @@ describe PgGlobalSearch do
 
   context "with manual setup" do
     before do
-      example.pg_global_search :searchable_model_one =>  { against: [:custom_field_one, :custom_field_two] },
-                               :searchable_model_two => { :against => [:custom_field_three], :associated_against => { searchable_association: [:custom_field_four] }},
+      example.pg_global_search :searchable_model_one =>  { :against => [:custom_field_one, :custom_field_two] },
+                               :searchable_model_two => { :against => [:custom_field_three], :associated_against => { :searchable_association => [:custom_field_four] }},
                                :pg_search_scope => { :scope => :search, :using => :trigram, :ignoring => :accents }
     end
 
@@ -79,7 +79,7 @@ describe PgGlobalSearch do
 
   context "with existing setup" do
     before do
-      example.pg_global_search :searchable_model_one, :searchable_model_two, :pg_search_scope => { scope: :search, :using => :trigram, :ignoring => :accents }
+      example.pg_global_search :searchable_model_one, :searchable_model_two, :pg_search_scope => { :scope => :search, :using => :trigram, :ignoring => :accents }
     end
 
     let(:expected_sql) {
