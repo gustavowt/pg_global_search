@@ -54,7 +54,7 @@ module PgGlobalSearch
         args.first.delete(:pg_search_scope) || {}
       end
 
-      pg_search_scope (pg_search_scope_options.delete(:scope) || :for_term), pg_search_scope_options.merge(against: [:term])
+      pg_search_scope (pg_search_scope_options.delete(:scope) || :for_term), pg_search_scope_options.merge(:against => [:term])
     end
 
     def pg_global_search?
