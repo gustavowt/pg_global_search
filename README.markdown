@@ -6,8 +6,8 @@ It is an alternative for pg_search Multi-search implementation. Instead of creat
 table, pg_global_search uses a database view to search for entries.
 
 [Site5 LLC]: http://www.site5.com
-[Build Status]: http://travis-ci.org/site5/solusvm
-[Build Icon]: https://secure.travis-ci.org/site5/solusvm.png?branch=master
+[Build Status]: http://travis-ci.org/site5/pg_global_search
+[Build Icon]: https://secure.travis-ci.org/site5/pg_global_search.png?branch=master
 
 Basic Examples
 --------------
