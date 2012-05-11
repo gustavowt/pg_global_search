@@ -1,7 +1,7 @@
-pg_global_seartch [![pg_global_seartch Build Status][Build Icon]][Build Status]
+pg_global_search [![pg_global_search Build Status][Build Icon]][Build Status]
 ===========================================================
 
-pg_global_seartch is an extension for [pg_search](https://github.com/Casecommons/pg_search).
+pg_global_search is an extension for [pg_search](https://github.com/Casecommons/pg_search).
 It is an alternative for pg_search Multi-search implementation. Instead of creating a lookup
 table, pg_global_search uses a database view to search for entries.
 
