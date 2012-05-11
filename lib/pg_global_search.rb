@@ -47,7 +47,14 @@ module PgGlobalSearch
       self.primary_key = :searchable_id
 
       belongs_to :searchable, polymorphic: true
-      pg_search_scope :for_term, :against => [:term], :using => :trigram, :ignoring => :accents
+
+      pg_search_scope_options = if args.size > 1
+        args.extract_options!.delete(:pg_search_scope) || {}
+      else
+        args.first.delete(:pg_search_scope) || {}
+      end
+
+      pg_search_scope (pg_search_scope_options.delete(:scope) || :for_term), pg_search_scope_options.merge(against: [:term])
     end
 
     def pg_global_search?
