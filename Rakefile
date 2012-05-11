@@ -10,11 +10,11 @@ rescue LoadError
   exit
 end
 
-desc 'Creates the test db'
-task :create_test_db do
-  %x( createdb -E UTF8 pg_global_search_test )
+desc 'Copies the test db config'
+task :setup_test_database_yml do
+  FileUtils.cp File.expand_path("spec/dummy/config/default.database.yml"), File.expand_path("spec/dummy/config/database.yml")
 end
 
-Rake::Task[:spec].prerequisites << :create_test_db
+Rake::Task[:spec].prerequisites << :setup_test_database_yml
 
 task :default => :spec

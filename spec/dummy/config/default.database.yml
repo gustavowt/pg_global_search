@@ -1,0 +1,9 @@
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: pg_global_search_test
+  pool: 5
+  username: postgres
+  password:
+  min_messages: WARNING

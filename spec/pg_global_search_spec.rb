@@ -1,14 +1,14 @@
 require 'pg_global_search'
+require 'pg'
 
 ActiveSupport.on_load :active_record do
   ActiveRecord::Base.send :include, PgGlobalSearch
 end
 
 begin
-  ActiveRecord::Base.establish_connection(:adapter  => 'postgresql',
-                                          :database => 'pg_global_search_test',
-                                          :username => ('postgres' if ENV["TRAVIS"]),
-                                          :min_messages => 'warning')
+  ActiveRecord::Base.configurations = YAML.load_file(File.expand_path("spec/dummy/config/database.yml"))
+  ActiveRecord::Base.establish_connection "test"
+
   connection = ActiveRecord::Base.connection
   postgresql_version = connection.send(:postgresql_version)
   connection.execute("SELECT 1")
