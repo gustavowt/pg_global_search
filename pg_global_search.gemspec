@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.files                 = %w[ Rakefile README.markdown Gemfile pg_global_search.gemspec ]
   s.files                += Dir['lib/**/*', 'spec/**/*']
 
-  s.add_dependency 'pg_search',         '~> 0.4.1'
+  s.add_dependency 'pg_search',         '~> 0.5'
 
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '~> 2.10.0'
   s.add_development_dependency 'rake', '~> 0.9.2.2'
   s.add_development_dependency 'pg'
 
