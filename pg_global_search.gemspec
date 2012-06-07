@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.platform              = Gem::Platform::RUBY
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
   s.name                  = 'pg_global_search'
-  s.version               = "0.0.1"
+  s.version               = "0.0.2"
   s.date                  = Time.now.strftime('%Y-%m-%d')
   s.homepage              = 'https://github.com/site5/pg_global_search'
   s.authors               = ['Fabio Kreusch']
