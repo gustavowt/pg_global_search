@@ -1,4 +1,6 @@
 language: ruby
+before_script:
+  - psql -c 'create database pg_global_search_test;' -U postgres
 script: "bundle exec rake spec"
 notifications:
   email:
