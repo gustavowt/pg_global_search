@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'pg_search',         '~> 0.5'
 
   s.add_development_dependency 'rspec', '~> 2.10.0'
-  s.add_development_dependency 'rake', '~> 0.9.2.2'
+  s.add_development_dependency 'rake', '~> 12.3.3'
   s.add_development_dependency 'pg'
 
   s.extra_rdoc_files = ['README.markdown']
